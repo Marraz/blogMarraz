@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Let me share some of my notes and what I have in my homelab</p>
+</div>
+<section class="posts">
+    @foreach (var post in Model)
+    {
+        <div class="post">
+            <h2>@post.Title</h2>
+            <p>@post.Excerpt</p>
+            <a href="/post/@post.Title.Replace(' ','-')">would you like to know more?</a>
+        </div>
+    }
+</section>
